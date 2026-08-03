@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Profile</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f5f5f5;
+}
+.container{
+    width:900px;
+    margin:auto;
+    border:2px solid black;
+    background:white;
+    padding:15px;
+}
+table{
+    width:100%;
+}
+td{
+    padding:10px;
+    vertical-align:top;
+}
+fieldset{
+    margin-top:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Header -->
+<table>
+<tr>
+<td width="150">
+<img src="profile.jpg" width="120" height="120">
+</td>
+
+<td align="center">
+<h1>Ms. Mariah Caraiban</h1>
+</td>
+</tr>
+</table>
+
+<hr>
+
+<!-- Navigation -->
+<a href="#">Academics</a> |
+<a href="#">Achievements</a> |
+<a href="#">Friends</a>
+
+<input type="search" placeholder="Search">
+
+<hr>
+
+<!-- Skills and Video -->
+<table>
+<tr>
+
+<td width="40%">
+Photoshop<br>
+<progress value="80" max="100"></progress><br><br>
+
+Java<br>
+<progress value="70" max="100"></progress><br><br>
+
+C++<br>
+<progress value="60" max="100"></progress><br><br>
+
+PHP<br>
+<progress value="50" max="100"></progress>
+</td>
+
+<td align="center">
+<video width="300" controls>
+<source src="video.mp4" type="video/mp4">
+</video>
+</td>
+
+</tr>
+</table>
+
+<hr>
+
+<!-- Forms -->
+<table>
+
+<tr>
+
+<td>
+
+<form>
+
+<fieldset>
+
+<legend>Personal Information</legend>
+
+<label>User Name:</label><br>
+<input type="text"><br><br>
+
+<label>Password:</label><br>
+<input type="password"><br><br>
+
+<label>Register No:</label><br>
+<input type="text"><br><br>
+
+<label>Age:</label><br>
+<input type="number"><br><br>
+
+<label>Gender:</label><br>
+<input type="radio" name="g">Male
+<input type="radio" name="g">Female
+<br><br>
+
+<label>DOB:</label><br>
+<input type="date"><br><br>
+
+<label>Favourite Color:</label><br>
+<input type="color"><br><br>
+
+<label>Upload Photo:</label><br>
+<input type="file">
+
+</fieldset>
+
+</form>
+
+</td>
+
+<td>
+
+<form>
+
+<fieldset>
+
+<legend>Contact Information</legend>
+
+<label>Address</label><br>
+<textarea rows="4" cols="30"></textarea><br><br>
+
+<label>State</label><br>
+
+<select>
+<option>Select</option>
+<option>Tamil Nadu</option>
+<option>Kerala</option>
+<option>Karnataka</option>
+</select>
+
+<br><br>
+
+<label>Zip Code</label><br>
+<input type="number"><br><br>
+
+<label>Mobile</label><br>
+<input type="tel"><br><br>
+
+<label>Email</label><br>
+<input type="email"><br><br>
+
+<label>Website</label><br>
+<input type="url"><br><br>
+
+<input type="checkbox"> Verified
+
+<br><br>
+
+<input type="submit">
+
+</fieldset>
+
+</form>
+
+</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<!-- PDF and Map -->
+<table>
+
+<tr>
+
+<td>
+<embed src="sample.pdf" width="400" height="250">
+</td>
+
+<td>
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..."
+width="400"
+height="250">
+</iframe>
+</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<!-- Audio -->
+<h3>Audio</h3>
+
+<audio controls>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<hr>
+
+<!-- Footer -->
+<p>Your Address</p>
+
+<p>© 2026 URK00XX0000 | Web Technology Lab</p>
+
+</div>
+
+</body>
+</html>
