@@ -1,0 +1,180 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f2f2f2;
+}
+
+.container{
+    width:900px;
+    margin:20px auto;
+    background:white;
+    border:2px solid gray;
+}
+
+/* Header */
+
+header{
+    display:flex;
+    align-items:center;
+    background:#7d2ae8;
+    color:white;
+    padding:15px;
+}
+
+.profile{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+}
+
+.title{
+    flex:1;
+    text-align:center;
+}
+
+.title h1{
+    letter-spacing:2px;
+    text-shadow:2px 2px 5px black;
+}
+
+.social img{
+    width:30px;
+    margin-left:5px;
+}
+
+/* Navigation */
+
+nav{
+    background:#b8f2ff;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav li{
+    flex:1;
+}
+
+nav a{
+    display:block;
+    text-align:center;
+    padding:10px;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:lightgreen;
+}
+
+/* About */
+
+.about{
+    display:flex;
+    padding:15px;
+    background:#bfefff;
+}
+
+.text{
+    width:40%;
+    padding:15px;
+    background:#dfefff;
+}
+
+.banner{
+    width:60%;
+}
+
+.banner img{
+    width:100%;
+    height:200px;
+}
+
+/* Skills */
+
+.skills{
+    display:flex;
+    justify-content:space-around;
+    padding:20px;
+}
+
+.card{
+    width:180px;
+    text-align:center;
+    background:#324f9e;
+    color:white;
+    padding:15px;
+}
+
+.card img{
+    width:100%;
+    height:120px;
+}
+
+/* Family */
+
+.family{
+    display:flex;
+    justify-content:space-around;
+    background:#0b3f73;
+    color:white;
+    padding:20px;
+}
+
+.family article{
+    width:30%;
+    text-align:center;
+}
+
+.family img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:5px solid white;
+    margin-bottom:10px;
+}
+
+.family h3{
+    color:#90ee90;
+    margin-bottom:10px;
+}
+
+.family p{
+    text-align:justify;
+    padding:10px;
+}
+
+/* Footer */
+
+footer{
+    background:#f8e6c3;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+
+/* Link Styles */
+
+a:link{
+    color:black;
+}
+
+a:visited{
+    color:blue;
+}
+
+a:hover{
+    color:red;
+}
+
+a:active{
+    color:green;
+}
