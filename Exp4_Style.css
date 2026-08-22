@@ -1,0 +1,313 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    height: 200px;
+    position: relative;
+    background:
+        linear-gradient(rgba(40, 92, 170, 0.95),
+                        rgba(55, 112, 195, 0.95)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1500&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Logo */
+.logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    margin: 20px 0 0 30px;
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    height: 45px;
+    background: #888;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding-left: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 55px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* Hover effect */
+nav ul li:hover {
+    background: #e51e1e;
+}
+
+/* ================= DROPDOWN ================= */
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 180px;
+    background: #278b27;
+    z-index: 100;
+}
+
+.dropdown li {
+    width: 100%;
+}
+
+.dropdown li a {
+    padding: 14px 20px;
+    color: white;
+}
+
+/* Show dropdown on hover */
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+.dropdown li:hover {
+    background: #146b14;
+}
+
+/* ================= INFORMATION AREA ================= */
+
+.info-area {
+    height: 180px;
+    background: #f2b6c4;
+    position: relative;
+}
+
+.menu-box {
+    position: absolute;
+    top: 5px;
+    left: 220px;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #257d20;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-title {
+    text-align: center;
+    background: #4eae22;
+    color: #123d0e;
+    padding: 9px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.menu-item {
+    padding: 12px;
+    text-align: center;
+    color: #fff;
+    background: #298b20;
+    border-bottom: 1px solid #206d1a;
+    font-size: 13px;
+}
+
+.menu-item:nth-child(even) {
+    background: #75d72d;
+    color: #214414;
+}
+
+/* ================= FORM SECTION ================= */
+
+.container {
+    min-height: 350px;
+
+    background:
+        linear-gradient(rgba(20, 20, 20, 0.35),
+                        rgba(20, 20, 20, 0.35)),
+        url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1500&q=80");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    padding: 45px 20px;
+}
+
+/* Form boxes */
+.box {
+    width: 320px;
+    background: #ffffff;
+    padding: 25px 22px;
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.45);
+}
+
+.box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+    font-size: 20px;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Text fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 11px;
+
+    margin-bottom: 14px;
+
+    border: 1px solid #ccc;
+    background: #e5e5e5;
+    border-radius: 3px;
+
+    outline: none;
+}
+
+/* Input focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border: 1px solid #2878df;
+    background: white;
+}
+
+/* Submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+
+    border: none;
+    border-radius: 4px;
+
+    background: #1769e0;
+    color: white;
+
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Button hover */
+input[type="submit"]:hover {
+    background: #064db8;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #f8deb2;
+    min-height: 100px;
+
+    padding: 18px 20px;
+
+    text-align: left;
+    color: #222;
+}
+
+footer .address {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+footer p:last-child {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media screen and (max-width: 750px) {
+
+    header {
+        height: 150px;
+    }
+
+    nav ul {
+        padding-left: 0;
+    }
+
+    nav ul li a {
+        padding: 14px 18px;
+        font-size: 13px;
+    }
+
+    .info-area {
+        height: 130px;
+    }
+
+    .menu-box {
+        left: 30px;
+        width: 180px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 25px;
+        padding: 40px 15px;
+    }
+
+    .box {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    nav ul li a {
+        padding: 14px 10px;
+        font-size: 11px;
+    }
+
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .dropdown {
+        width: 140px;
+    }
+}
