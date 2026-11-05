@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #333;
+}
+
+/* Navbar */
+
+.navbar {
+  background: #1e3a8a;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: yellow;
+}
+
+/* Main container */
+
+.container {
+  min-height: 80vh;
+  padding: 30px 15px;
+}
+
+.page {
+  text-align: center;
+  padding: 60px 20px;
+  line-height: 2;
+}
+
+/* Form */
+
+.card {
+  max-width: 500px;
+  margin: 20px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #0002;
+}
+
+.card h2 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+.group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* Error */
+
+small {
+  color: red;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Buttons */
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+/* Success */
+
+.success {
+  color: green;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Login */
+
+.login-box input {
+  margin-bottom: 15px;
+}
+
+/* Student */
+
+.student-card {
+  background: #eff6ff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.student-card p {
+  margin-top: 10px;
+}
+
+/* Footer */
+
+.footer {
+  background: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .card {
+    width: 95%;
+  }
+
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+  .navbar h2 {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  input, select {
+    font-size: 14px;
+  }
+
+  .page {
+    padding: 30px 10px;
+  }
+
+}
