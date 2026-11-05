@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Styles and Animations</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        h1 {
+            color: blue;
+        }
+
+        .box {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid black;
+        }
+
+        #car {
+            position: relative;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>JAVASCRIPT – STYLES AND ANIMATIONS</h1>
+
+<!-- 1. DIGITAL CLOCK -->
+<div class="box">
+    <h2>1. Digital Clock</h2>
+    <h3 id="time"></h3>
+</div>
+
+<!-- 2. DYNAMIC BACKGROUND -->
+<div class="box">
+    <h2>2. Dynamic Background Colour</h2>
+    <button onclick="setBackgroundColor()">
+        Change Background
+    </button>
+</div>
+
+<!-- 3. MOUSE EVENTS -->
+<div class="box">
+    <h2>3. Change Font Size</h2>
+
+    <p id="para1"
+       onmouseover="incSize()"
+       onmouseout="decSize()">
+       Move cursor over me to zoom in...
+    </p>
+</div>
+
+<!-- 4. CAR ANIMATION -->
+<div class="box">
+    <h2>4. Move and Stop Car</h2>
+
+    <img id="car"
+         src="https://www.w3schools.com/html/car.png"
+         width="120">
+
+    <br><br>
+
+    <button onclick="moveRight()">Move</button>
+    <button onclick="stop()">Stop</button>
+</div>
+
+<!-- 5. STUDENT DETAILS -->
+<div class="box">
+    <h2>5. Student Details</h2>
+    <div id="demo"></div>
+</div>
+
+<script>
+
+// 1. DIGITAL CLOCK
+
+function display() {
+    var d = new Date();
+
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+
+    document.getElementById("time").innerHTML =
+        h + ":" + m + ":" + s;
+}
+
+display();
+setInterval(display, 1000);
+
+
+// 2. DYNAMIC BACKGROUND COLOUR
+
+function setBackgroundColor() {
+
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+
+    var color = "rgb(" + red + "," +
+                green + "," + blue + ")";
+
+    document.body.style.backgroundColor = color;
+}
+
+setInterval(setBackgroundColor, 30000);
+
+
+// 3. CHANGE FONT SIZE
+
+function incSize() {
+    document.getElementById("para1").style.fontSize = "28px";
+}
+
+function decSize() {
+    document.getElementById("para1").style.fontSize = "16px";
+}
+
+
+// 4. MOVE AND STOP CAR
+
+var imgObj;
+var animate;
+
+function init() {
+    imgObj = document.getElementById("car");
+    imgObj.style.position = "relative";
+    imgObj.style.left = "0px";
+}
+
+function moveRight() {
+
+    clearTimeout(animate);
+
+    imgObj.style.left =
+        parseInt(imgObj.style.left) + 1 + "px";
+
+    animate = setTimeout(moveRight, 10);
+}
+
+function stop() {
+    clearTimeout(animate);
+}
+
+init();
+
+
+// 5. ARRAY OF STUDENT OBJECTS
+
+var student = [
+    
+    {
+        name: "abc",
+        r_num: "XXX00XX0000",
+        dob: "05-jan-2001"
+    }
+];
+
+var output = "";
+
+for (var i = 0; i < student.length; i++) {
+
+    output += student[i].name +
+        "'s Register Number is " +
+        student[i].r_num + "<br>";
+
+    var year = parseInt(student[i].dob.split("-")[2]);
+
+    if (year < 2000) {
+        output += "Born before 2000<br><br>";
+    }
+    else {
+        output += "Born after 2000<br><br>";
+    }
+}
+
+document.getElementById("demo").innerHTML = output;
+
+</script>
+
+</body>
+</html>
