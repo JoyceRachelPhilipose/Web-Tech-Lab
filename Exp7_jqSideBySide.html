@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Working with jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #e6f0ff;
+            text-align: center;
+            margin: 0;
+        }
+
+        h1 {
+            background: navy;
+            color: white;
+            padding: 20px;
+        }
+
+        /* SIDE BY SIDE LAYOUT */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            flex-wrap: nowrap;
+        }
+
+        .container {
+            background: white;
+            width: 33.33%;
+            max-width: 450px;
+            min-width: 0;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #999;
+            box-sizing: border-box;
+        }
+
+        input, select {
+            padding: 10px;
+            margin: 8px;
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: blue;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: darkblue;
+        }
+
+        .result {
+            color: green;
+            font-weight: bold;
+            line-height: 1.8;
+            margin-top: 15px;
+        }
+
+        /* CAR DESIGN */
+        #car {
+            background: red;
+            width: 200px;
+            max-width: 100%;
+            height: 80px;
+            margin: 45px auto 0;
+            border-radius: 50px 50px 10px 10px;
+        }
+
+        #glass {
+            background: lightblue;
+            width: 100px;
+            height: 35px;
+            margin: auto;
+            position: relative;
+            top: 10px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .tyre {
+            background: black;
+            width: 45px;
+            height: 45px;
+            display: inline-block;
+            border-radius: 50%;
+            margin: -5px 20px 0;
+        }
+
+        footer {
+            background: navy;
+            color: white;
+            padding: 15px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .main-container {
+                flex-wrap: wrap;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 450px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>WORKING WITH JQUERY</h1>
+
+<div class="main-container">
+
+    <!-- PROGRAM 1: BUDGET CALCULATOR -->
+
+    <div class="container">
+
+        <h2>1. Budget Calculator</h2>
+
+        <input type="number" id="amount"
+               placeholder="Enter Total Amount">
+
+        <h3>Percentage (%)</h3>
+
+        <input type="number" id="rent"
+               placeholder="Room Rent %">
+
+        <input type="number" id="accessories"
+               placeholder="Accessories %">
+
+        <input type="number" id="emergency"
+               placeholder="Emergency %">
+
+        <input type="number" id="saving"
+               placeholder="Saving %">
+
+        <br>
+
+        <button id="evaluate">
+            Evaluate My Money
+        </button>
+
+        <div id="budgetResult" class="result"></div>
+
+    </div>
+
+
+    <!-- PROGRAM 2: CAKE ORDER CALCULATOR -->
+
+    <div class="container">
+
+        <h2>2. Cake Order Calculator</h2>
+
+        <h3>Select Cake</h3>
+
+        <select id="cake">
+            <option value="500">Chocolate Cake - ₹500</option>
+            <option value="600">Vanilla Cake - ₹600</option>
+            <option value="700">Black Forest - ₹700</option>
+            <option value="800">Red Velvet - ₹800</option>
+        </select>
+
+        <h3>Quantity</h3>
+
+        <input type="number" id="quantity"
+               value="1" min="1">
+
+        <h3>Extra Toppings</h3>
+
+        <select id="topping">
+            <option value="0">No Toppings - ₹0</option>
+            <option value="50">Chocolate - ₹50</option>
+            <option value="100">Fruits - ₹100</option>
+            <option value="150">Nuts - ₹150</option>
+        </select>
+
+        <br>
+
+        <button id="order">
+            Calculate Bill
+        </button>
+
+        <div id="cakeResult" class="result"></div>
+
+    </div>
+
+
+    <!-- PROGRAM 3: CAR BODY WORKSHOP -->
+
+    <div class="container">
+
+        <h2>3. Car Body Workshop</h2>
+
+        <div id="car">
+            <div id="glass"></div>
+        </div>
+
+        <div>
+            <span class="tyre"></span>
+            <span class="tyre"></span>
+        </div>
+
+        <h3>Change Car Colour</h3>
+
+        <button class="color" data-color="red">Red</button>
+        <button class="color" data-color="blue">Blue</button>
+        <button class="color" data-color="green">Green</button>
+        <button class="color" data-color="yellow">Yellow</button>
+
+        <h3>Glass Tint</h3>
+
+        <button id="light">Light Tint</button>
+        <button id="dark">Dark Tint</button>
+
+        <h3>Tyre Size</h3>
+
+        <button id="small">Small</button>
+        <button id="large">Large</button>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>Ex.No.07 - Working with jQuery</p>
+</footer>
+
+
+<script>
+
+$(document).ready(function() {
+
+    // 1. BUDGET CALCULATOR
+
+    $("#evaluate").click(function() {
+
+        var amount = Number($("#amount").val());
+
+        var rent = Number($("#rent").val());
+        var accessories = Number($("#accessories").val());
+        var emergency = Number($("#emergency").val());
+        var saving = Number($("#saving").val());
+
+        if ($("#amount").val() === "" ||
+            $("#rent").val() === "" ||
+            $("#accessories").val() === "" ||
+            $("#emergency").val() === "" ||
+            $("#saving").val() === "") {
+
+            alert("Please fill all fields");
+            return;
+        }
+
+        var total = rent + accessories +
+                    emergency + saving;
+
+        if (amount <= 0 || rent < 0 ||
+            accessories < 0 || emergency < 0 ||
+            saving < 0 || total !== 100) {
+
+            alert("Percentage must total 100%");
+            return;
+        }
+
+        var r = amount * rent / 100;
+        var a = amount * accessories / 100;
+        var e = amount * emergency / 100;
+        var s = amount * saving / 100;
+
+        $("#budgetResult").html(
+            "<h3>Budget Details</h3>" +
+            "Room Rent: ₹" + r.toFixed(2) + "<br>" +
+            "Accessories: ₹" + a.toFixed(2) + "<br>" +
+            "Emergency: ₹" + e.toFixed(2) + "<br>" +
+            "Saving: ₹" + s.toFixed(2)
+        );
+
+    });
+
+
+    // 2. CAKE ORDER CALCULATOR
+
+    $("#order").click(function() {
+
+        var cake = Number($("#cake").val());
+        var quantity = Number($("#quantity").val());
+        var topping = Number($("#topping").val());
+
+        if (!Number.isInteger(quantity) || quantity <= 0) {
+            alert("Enter valid quantity");
+            return;
+        }
+
+        var total = (cake * quantity) + topping;
+
+        $("#cakeResult").html(
+            "<h3>Order Details</h3>" +
+            "Cake Price: ₹" + cake + "<br>" +
+            "Quantity: " + quantity + "<br>" +
+            "Toppings: ₹" + topping + "<br>" +
+            "Total Bill: ₹" + total
+        );
+
+    });
+
+
+    // 3. CAR BODY WORKSHOP
+
+    // Change car colour
+
+    $(".color").click(function() {
+
+        var color = $(this).data("color");
+
+        $("#car").css("background-color", color);
+
+    });
+
+
+    // Change glass tint
+
+    $("#light").click(function() {
+
+        $("#glass").css("background-color", "lightblue");
+
+    });
+
+    $("#dark").click(function() {
+
+        $("#glass").css("background-color", "black");
+
+    });
+
+
+    // Change tyre size
+
+    $("#small").click(function() {
+
+        $(".tyre").css({
+            "width": "30px",
+            "height": "30px"
+        });
+
+    });
+
+    $("#large").click(function() {
+
+        $(".tyre").css({
+            "width": "60px",
+            "height": "60px"
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
